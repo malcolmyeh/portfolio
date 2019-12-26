@@ -1,0 +1,22 @@
+[
+    {
+        "type": "Languages",
+        "data": ["C++", "JavaScript", "Python", "TypeScript"]
+    },
+    {
+        "type": "Front End",
+        "data": ["React", "Gatsby", "HTML", "CSS", "Bootstrap"]
+    },
+    {
+        "type": "Back End",
+        "data": ["Flask"]
+    },
+    {
+        "type": "Database",
+        "data": ["GraphQL", "SQLite", "SQLAlchemy", "Graphene", "Firebase"]
+    },
+    {
+        "type": "Tools",
+        "data": ["Selenium", "Protractor", "Chrome DevTools"]
+    }
+]
