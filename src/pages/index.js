@@ -6,6 +6,7 @@ import Experience from "../components/experience";
 import Projects from "../components/projects";
 import Contact from "../components/contact";
 import Cover from "../components/cover";
+import Footer from "../components/footer";
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 const IndexPage = () => (
@@ -17,6 +18,7 @@ const IndexPage = () => (
     <Projects/>
     <Experience/>
     <Contact/>
+    <Footer/>
   </div>
 )
 

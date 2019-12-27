@@ -13,6 +13,7 @@ const options = {
 
 // TODO: 
 // - find better way to implement handleChange (switch statement seems redundant)
+//      - https://zacjones.io/handle-multiple-inputs-in-react-with-hooks
 // - find a way to filter by all instead of adding "All" to projectList property
 
 const Experience = () => {
