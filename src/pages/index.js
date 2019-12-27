@@ -7,8 +7,6 @@ import Projects from "../components/projects";
 import Contact from "../components/contact";
 import Cover from "../components/cover";
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "./index.css";
-
 
 const IndexPage = () => (
   

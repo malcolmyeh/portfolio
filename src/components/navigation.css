@@ -1,7 +1,7 @@
 .navbar {
     background-color: transparent;
-    font-size: 16px;
-    font-weight: 500;
+    /* font-size: 16px;
+    font-weight: 500; */
     padding: 10px;
     transition: all 1s ease;
     -webkit-transition: all 1s ease;
@@ -9,20 +9,20 @@
     -o-transition: all 1s ease;
     -ms-transition: all 1s ease;
     border-bottom: none;
-    height: 5vh;
+    /* height: 5vh; */
   }
   
   .navbar-border {
-    border-bottom: 2px solid #cccccc !important;
+    border-bottom: 1px solid black !important;
   }
   
   .white-background {
     background-color: white !important;
   }
   
-  .navbar-brand {
+  /* .navbar-brand {
     font-size: 25px !important;
-  }
+  } */
 
   
   .nav-link:hover {

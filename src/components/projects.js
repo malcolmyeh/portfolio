@@ -1,18 +1,95 @@
-import React from "react";
+import React, { useState } from "react";
+import projectList from "../data/projects";
+import { StaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
+import { Form, FormGroup, Label, Input, Row, Col } from "reactstrap";
+
+// transform available filter options into an Object
+const options = {
+    Language: [...new Set([].concat.apply([], projectList.map(project => project.languages)))],
+    Type: [...new Set([].concat.apply([], projectList.map(project => project.type)))],
+    Library: [...new Set([].concat.apply([], projectList.map(project => project.libraries)))]
+};
+
+// TODO: 
+// - find better way to implement handleChange (switch statement seems redundant)
+// - find a way to filter by all instead of adding "All" to projectList property
 
 const Experience = () => {
+    const [language, setLanguage] = useState("All");
+    const [type, setType] = useState("All");
+    const [library, setLibrary] = useState("All");
+
+    const handleChange = (event) => {
+        switch (event.target.name) {
+            case "Language":
+                setLanguage(event.target.value);
+                break;
+            case "Type":
+                setType(event.target.value);
+                break;
+            case "Library":
+                setLibrary(event.target.value);
+                break;
+            default:
+                break;
+        }
+    }
     return (
-        <div id="projects">
-            <h1>PROJECTS</h1>
-            <h3>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla facilisi nullam vehicula ipsum a arcu cursus. Duis ut diam quam nulla porttitor. Sit amet aliquam id diam maecenas ultricies. A erat nam at lectus urna duis convallis convallis tellus. Feugiat in fermentum posuere urna nec tincidunt praesent. Diam vulputate ut pharetra sit amet aliquam. Purus semper eget duis at tellus at urna condimentum mattis. Augue ut lectus arcu bibendum at varius vel. Donec ultrices tincidunt arcu non. Duis at tellus at urna condimentum mattis pellentesque id. Nulla pellentesque dignissim enim sit. Habitasse platea dictumst quisque sagittis purus sit. Convallis posuere morbi leo urna molestie at elementum eu facilisis. Egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate. In vitae turpis massa sed elementum tempus egestas. Massa massa ultricies mi quis hendrerit dolor magna eget est. Scelerisque eleifend donec pretium vulputate sapien nec sagittis.
-
-Potenti nullam ac tortor vitae purus faucibus ornare. Nibh venenatis cras sed felis eget velit. Venenatis lectus magna fringilla urna porttitor rhoncus. Metus aliquam eleifend mi in nulla. Viverra adipiscing at in tellus integer feugiat scelerisque varius. Ultricies mi quis hendrerit dolor magna eget est lorem. Lacinia at quis risus sed. Felis imperdiet proin fermentum leo vel orci porta. Convallis a cras semper auctor neque vitae tempus quam. Viverra nibh cras pulvinar mattis. Dis parturient montes nascetur ridiculus mus mauris vitae ultricies. Quam vulputate dignissim suspendisse in est ante in nibh. Curabitur vitae nunc sed velit dignissim sodales ut. Ut morbi tincidunt augue interdum velit euismod.
-
-Nam aliquam sem et tortor. Arcu dui vivamus arcu felis bibendum ut. Dolor magna eget est lorem ipsum dolor sit. Purus in massa tempor nec feugiat nisl pretium fusce. Velit dignissim sodales ut eu. Velit laoreet id donec ultrices tincidunt arcu non. Commodo odio aenean sed adipiscing diam. Enim sit amet venenatis urna cursus eget nunc. Scelerisque fermentum dui faucibus in ornare quam viverra orci sagittis. Varius morbi enim nunc faucibus a pellentesque sit amet porttitor. Purus in mollis nunc sed id. In iaculis nunc sed augue lacus viverra vitae. Amet consectetur adipiscing elit duis tristique. Non pulvinar neque laoreet suspendisse interdum consectetur.
-
-Nibh sit amet commodo nulla facilisi nullam vehicula ipsum. Magna fringilla urna porttitor rhoncus dolor purus non. In hac habitasse platea dictumst quisque sagittis purus. Vitae aliquet nec ullamcorper sit amet. Turpis egestas pretium aenean pharetra magna ac placerat vestibulum. Lectus sit amet est placerat in. Sed odio morbi quis commodo odio aenean sed adipiscing. Turpis egestas sed tempus urna et pharetra pharetra massa massa. Ut pharetra sit amet aliquam id diam maecenas ultricies mi. Vulputate eu scelerisque felis imperdiet proin fermentum leo vel orci. Consequat semper viverra nam libero justo laoreet sit. Consectetur libero id faucibus nisl. Eget duis at tellus at urna condimentum mattis pellentesque id. Faucibus ornare suspendisse sed nisi lacus sed viverra tellus in. Eu turpis egestas pretium aenean pharetra magna ac placerat vestibulum. Etiam tempor orci eu lobortis. Turpis egestas pretium aenean pharetra. Sed blandit libero volutpat sed cras ornare arcu dui. Adipiscing commodo elit at imperdiet dui accumsan sit.        </h3>
-        </div>
+        <StaticQuery
+            query={graphql`
+            query {
+                allFile(filter: {sourceInstanceName: {eq: "projects"}}){
+                    edges{
+                        node{
+                            relativePath
+                            childImageSharp{
+                                fluid(maxWidth:3000, maxHeight:2000){
+                                    ...GatsbyImageSharpFluid
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        `}
+            render={data => (
+                <div id="projects">
+                    <h1>PROJECTS</h1>
+                    <Form onChange={handleChange}>
+                        <Row>
+                            {Object.entries(options).map((entry) => (
+                                <Col>
+                                    <FormGroup>
+                                        <Label for={entry[0]}>{entry[0]}</Label>
+                                        <Input type="select" name={entry[0]}>
+                                            {entry[1].map((option) => (
+                                                <option>{option}</option>
+                                            ))}
+                                        </Input>
+                                    </FormGroup>
+                                </Col>
+                            ))}
+                        </Row>
+                    </Form>
+                    {projectList.filter(project => (project.languages.includes(language) &&
+                        project.type.includes(type) && project.libraries.includes(library)))
+                        .map(({ title, description, languages, image }) => {
+                            const img = data.allFile.edges.find(
+                                ({ node }) => node.relativePath === image
+                            ).node;
+                            return (
+                                <div key={title} style={{width: "500px", height: "500px"}}>
+                                    <h1>{title}</h1>
+                                    {description.map(entry => (
+                                        <h3>{entry}</h3>
+                                    ))}
+                                    <Img fluid={img.childImageSharp.fluid} />
+                                </div>
+                            );
+                        })}
+                </div>
+            )} />
     );
 };
 

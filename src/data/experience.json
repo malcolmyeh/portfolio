@@ -1,0 +1,10 @@
+[
+    {
+        "company": "Evertz Microsystems",
+        "position": "Software Engineer",
+        "description": ["what I did [0]", "what I did [1]", "what I did [2}", "what I did [3]"],
+        "startDate": "09/03/2019",
+        "endDate": "12/20/2019",
+        "image": "evertz.png"
+    }
+]
