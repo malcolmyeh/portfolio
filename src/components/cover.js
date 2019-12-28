@@ -30,6 +30,7 @@ const Cover = () => (
                     style={
                         {
                             height: "100%",
+                            width: "100%",
                         }
                     }
                     fluid={data.cover.childImageSharp.fluid} />

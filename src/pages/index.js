@@ -13,7 +13,8 @@ import "./index.css"
 const IndexPage = () => (
 
   <div style={{
-    "overflow": "hidden"
+    "overflow-x": "hidden",
+    "overflow-y": "hidden",
   }}>
     <Navigation />
     <Cover />
