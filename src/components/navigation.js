@@ -5,7 +5,6 @@ import {
     Navbar,
     NavbarToggler,
     NavbarBrand,
-    NavLink,
     NavItem,
 } from "reactstrap";
 import AnchorLink from 'react-anchor-link-smooth-scroll';
@@ -56,6 +55,7 @@ const Navigation = () => {
                     items={navigationItems.map(item => item.toLowerCase())}
                     currentClassName="active"
                     className="ml-auto navbar-nav"
+                    
                     navbar>
                     {navigationItems.map(item => (
                         <NavItem key={item}>{getNavAnchorLink(item)}</NavItem>

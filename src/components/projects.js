@@ -3,6 +3,8 @@ import projectList from "../data/projects";
 import { StaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import { Form, FormGroup, Label, Input, Row, Col } from "reactstrap";
+import styled from "styled-components";
+import Collapsible from 'react-collapsible';
 
 // transform available filter options into an Object
 const options = {
@@ -16,7 +18,7 @@ const options = {
 //      - https://zacjones.io/handle-multiple-inputs-in-react-with-hooks
 // - find a way to filter by all instead of adding "All" to projectList property
 
-const Experience = () => {
+const Projects = () => {
     const [language, setLanguage] = useState("All");
     const [type, setType] = useState("All");
     const [library, setLibrary] = useState("All");
@@ -45,7 +47,7 @@ const Experience = () => {
                         node{
                             relativePath
                             childImageSharp{
-                                fluid(maxWidth:3000, maxHeight:2000){
+                                fluid(maxWidth:1920, maxHeight:1280){
                                     ...GatsbyImageSharpFluid
                                 }
                             }
@@ -56,42 +58,69 @@ const Experience = () => {
         `}
             render={data => (
                 <div id="projects">
-                    <h1>PROJECTS</h1>
-                    <Form onChange={handleChange}>
-                        <Row>
-                            {Object.entries(options).map((entry) => (
-                                <Col>
-                                    <FormGroup>
-                                        <Label for={entry[0]}>{entry[0]}</Label>
-                                        <Input type="select" name={entry[0]}>
-                                            {entry[1].map((option) => (
-                                                <option>{option}</option>
-                                            ))}
-                                        </Input>
-                                    </FormGroup>
-                                </Col>
-                            ))}
-                        </Row>
-                    </Form>
-                    {projectList.filter(project => (project.languages.includes(language) &&
-                        project.type.includes(type) && project.libraries.includes(library)))
-                        .map(({ title, description, languages, image }) => {
-                            const img = data.allFile.edges.find(
-                                ({ node }) => node.relativePath === image
-                            ).node;
-                            return (
-                                <div key={title} style={{width: "500px", height: "500px"}}>
-                                    <h1>{title}</h1>
-                                    {description.map(entry => (
-                                        <h3>{entry}</h3>
+                    <div style={{
+                        "paddingTop": "8vh",
+                        "paddingLeft": "5vw",
+                        "paddingRight": "5vw",
+                        "paddingBottom": "7vh"
+                    }}>
+                        <h1>PROJECTS</h1>
+                        <Collapsible
+                            trigger="Filter by"
+                            >
+                            <Form onChange={handleChange}>
+                                <Row>
+                                    {Object.entries(options).map((entry) => (
+                                        <Col>
+                                            <FormGroup>
+                                                <Label for={entry[0]}>{entry[0]}</Label>
+                                                <Input type="select" name={entry[0]}>
+                                                    {entry[1].map((option) => (
+                                                        <option>{option}</option>
+                                                    ))}
+                                                </Input>
+                                            </FormGroup>
+                                        </Col>
                                     ))}
-                                    <Img fluid={img.childImageSharp.fluid} />
-                                </div>
-                            );
-                        })}
-                </div>
+                                </Row>
+                            </Form>
+                        </Collapsible>
+                    </div>
+                    <Row>
+                        {projectList.filter(project => (project.languages.includes(language) &&
+                            project.type.includes(type) && project.libraries.includes(library)))
+                            .map(({ title, description, image }) => {
+                                const img = data.allFile.edges.find(
+                                    ({ node }) => node.relativePath === image
+                                ).node;
+                                return (
+                                    <Col xs="12" sm="12" md="12" lg="6" key={title} style={{
+                                        padding: "0"
+                                    }}>
+                                        <Img fluid={img.childImageSharp.fluid} />
+                                        <div style={{
+                                            color: "black",
+                                            margin: "0",
+                                            "text-align": "center",
+                                            position: "absolute",
+                                            top: "50%",
+                                            left: "50%",
+                                            "marginRight": "-50%",
+                                            transform: "translate(-50%, -50%)"
+                                        }}>
+                                            <h1>{title}</h1>
+                                            {description.map(entry => (
+                                                <h3>{entry}</h3>
+                                            ))}
+                                        </div>
+
+                                    </Col>
+                                );
+                            })}
+                    </Row>
+                </div >
             )} />
     );
 };
 
-export default Experience;
+export default Projects;

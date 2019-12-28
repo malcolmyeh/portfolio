@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 const ImageWrapper = styled.div`
     height: 100vh;
-`;
+    `;
 
 const Cover = () => (
     <StaticQuery
@@ -30,7 +30,6 @@ const Cover = () => (
                     style={
                         {
                             height: "100%",
-                            width: "100%",
                         }
                     }
                     fluid={data.cover.childImageSharp.fluid} />

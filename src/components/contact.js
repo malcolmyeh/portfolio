@@ -60,7 +60,7 @@ const ContactForm = () => {
                     </FormGroup>
                 </Col>
             </Row>
-            <Button onClick={handleSubmit}>Submit</Button>
+            <Button onClick={handleSubmit}>Send</Button>
         </Form>
     )
 }

@@ -17,6 +17,7 @@
     "gatsby-transformer-sharp": "^2.3.7",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
+    "react-collapsible": "^2.6.2",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
     "reactstrap": "^8.2.0",
@@ -24,6 +25,7 @@
     "typeface-cinzel": "0.0.72",
     "typeface-cormorant-garamond": "0.0.72",
     "typeface-eb-garamond": "0.0.72",
+    "typeface-nanum-myeongjo": "0.0.63",
     "typeface-roboto": "0.0.75"
   },
   "devDependencies": {

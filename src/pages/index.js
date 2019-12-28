@@ -8,17 +8,20 @@ import Contact from "../components/contact";
 import Cover from "../components/cover";
 import Footer from "../components/footer";
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "./index.css"
 
 const IndexPage = () => (
-  
-  <div> 
+
+  <div style={{
+    "overflow": "hidden"
+  }}>
     <Navigation />
-    <Cover/>
-    <About/>
-    <Projects/>
-    <Experience/>
-    <Contact/>
-    <Footer/>
+    <Cover />
+    <About />
+    <Projects />
+    <Experience />
+    <Contact />
+    <Footer />
   </div>
 )
 
