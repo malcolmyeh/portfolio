@@ -15,7 +15,7 @@ const options = {
 
 const HoverCol = styled(Col)`
     padding: 0;
-    overflow: hidden;
+    height: 50vh;
 `;
 
 const HoverImage = styled(Img)`
@@ -34,13 +34,14 @@ const HoverImage = styled(Img)`
 const HoverText = styled.div`
     text-align: center;
     position: absolute;
-    top: 50%;
+    top: 75%;
     left: 50%;
-    margin-right: -50%;
+    margin-right: -40%;
     transform: translate(-50%, -50%);
     opacity: 0;
     ${HoverCol}:hover & {
         opacity: 1;
+        top: 50%;
     }
     transition: all 1s ease;
     -webkit-transition: all 1s ease;
@@ -85,7 +86,7 @@ const Projects = () => {
                         node{
                             relativePath
                             childImageSharp{
-                                fluid(maxWidth:1920, maxHeight:1280){
+                                fluid(maxWidth:1920, maxHeight:1920){
                                     ...GatsbyImageSharpFluid
                                 }
                             }
@@ -109,7 +110,7 @@ const Projects = () => {
                             <Form onChange={handleChange}>
                                 <Row>
                                     {Object.entries(options).map((entry) => (
-                                        <Col>
+                                        <Col xs="12" sm="12" md="12" lg="4">
                                             <FormGroup>
                                                 <Label for={entry[0]}>{entry[0]}</Label>
                                                 <Input type="select" name={entry[0]}>
@@ -127,7 +128,7 @@ const Projects = () => {
                     <Row>
                         {projectList.filter(project => (project.languages.includes(language) &&
                             project.type.includes(type) && project.libraries.includes(library)))
-                            .map(({ title, description, image }) => {
+                            .map(({ title, description, image, link, libraries }) => {
                                 const img = data.allFile.edges.find(
                                     ({ node }) => node.relativePath === image
                                 ).node;
@@ -136,13 +137,17 @@ const Projects = () => {
                                         padding: "0",
                                         overflow: "hidden",
                                     }}>
-
                                         <HoverImage fluid={img.childImageSharp.fluid} />
                                         <HoverText>
                                             <h1>{title}</h1>
-                                            {description.map(entry => (
-                                                <h3>{entry}</h3>
+                                            <span>• </span>
+                                            {libraries.filter(entry => entry !== "All").map(entry => (
+                                                <span>{entry} • </span>
                                             ))}
+                                            {description.map(entry => (
+                                                <p>{entry}</p>
+                                            ))}
+                                            <a href={link}>Source Code</a>
                                         </HoverText>
 
                                     </HoverCol>

@@ -2,9 +2,21 @@
     {
         "company": "Evertz Microsystems",
         "position": "Software Engineer",
-        "description": ["what I did [0]", "what I did [1]", "what I did [2}", "what I did [3]"],
-        "startDate": "09/03/2019",
-        "endDate": "12/20/2019",
-        "image": "evertz.png"
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "startDate": "September 2019",
+        "endDate": "December 2019",
+        "image": "grey.png",
+        "location": "Burlington, ON",
+        "link": "https://evertz.com/"
+    },
+    {
+        "company": "Test Company",
+        "position": "Test Job",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "startDate": "January 0000",
+        "endDate": "December 9999",
+        "image": "darkgrey.jpg",
+        "location": "Test, TS",
+        "link": "https://github.com/malcolmyeh"
     }
 ]

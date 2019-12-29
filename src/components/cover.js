@@ -3,10 +3,12 @@ import { StaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import "./cover.css";
 import styled from "styled-components";
+import BackgroundImage from "gatsby-background-image";
 
-const ImageWrapper = styled.div`
+const Background = styled(BackgroundImage)`
     height: 100vh;
-    `;
+    align-items: center;
+`;
 
 const Cover = () => (
     <StaticQuery
@@ -25,22 +27,12 @@ const Cover = () => (
             }
         `}
         render={data => (
-            <ImageWrapper>
-                <Img
-                    style={
-                        {
-                            height: "100%",
-                            width: "100%",
-                        }
-                    }
-                    fluid={data.cover.childImageSharp.fluid} />
+            <Background fluid={data.cover.childImageSharp.fluid}>
                 <div className="center">
-                    <h1>
-                        MALCOLM YEH
-                    </h1>
+                    <h1>MALCOLM YEH</h1>
                     <p className="greetings">Scroll down to get to know me!</p>
                 </div>
-            </ImageWrapper>
+            </Background>
         )}
 
     />

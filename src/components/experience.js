@@ -4,43 +4,14 @@ import { StaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import { Row, Col } from "reactstrap";
 import styled from "styled-components";
+import BackgroundImage from 'gatsby-background-image'
 
-
-const HoverCol = styled(Col)`
-    padding: 0;
-    overflow: hidden;
-
-`;
-
-const HoverImage = styled(Img)`
-    transition: all 1s ease;
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    ${HoverCol}:hover & {
-        transform: scale(1.1);
-        opacity: 0.4;
-    }
-
-`;
 
 const HoverText = styled.div`
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    ${HoverCol}:hover & {
-        opacity: 1;
-    }
-    transition: all 1s ease;
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
+    padding-top: 8vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-bottom: 7vh;
 `;
 
 
@@ -73,30 +44,28 @@ const Experience = () => {
                     }}>
                         <h1>EXPERIENCE</h1>
                     </div>
-                    <Row>
-                        {experienceList.map(({ company, position, description, startDate, endDate, image }) => {
-                            const img = data.allFile.edges.find(
-                                ({ node }) => node.relativePath === image
-                            ).node;
-                            return (
-                                // overflow: "hidden"}}>
-                                <HoverCol>
-                                    {/* <Img fluid={img.childImageSharp.fluid} /> */}
-                                    <HoverImage fluid={img.childImageSharp.fluid} />
+
+                    {experienceList.map(({ company, position, description, startDate, endDate, image, location, link }) => {
+                        const img = data.allFile.edges.find(
+                            ({ node }) => node.relativePath === image
+                        ).node;
+                        return (
+                            <Row style={{ "min-height": "50vh" }}>
+                                <BackgroundImage backgroundColor={`#040e18`} fluid={img.childImageSharp.fluid}>
                                     <HoverText>
                                         <h1>{company}</h1>
-                                        <h3>{position}</h3>
-                                        <p>{startDate}</p>
-                                        <p>{endDate}</p>
-                                        {description.map(entry => (
-                                            <p>{entry}</p>
-                                        ))}
+                                        <h4>{position}</h4>
+                                        <p>{startDate} - {endDate}</p>
+                                        <p>{location}</p>
+                                        <p>{description}</p>
                                     </HoverText>
-                                </HoverCol>
+                                </BackgroundImage>
 
-                            );
-                        })}
-                    </Row>
+                            </Row>
+
+                        );
+                    })}
+
                 </div >
 
             )

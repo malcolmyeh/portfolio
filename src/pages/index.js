@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import Navigation from "../components/navigation";
 import About from "../components/about";
 import Experience from "../components/experience";
@@ -7,15 +6,12 @@ import Projects from "../components/projects";
 import Contact from "../components/contact";
 import Cover from "../components/cover";
 import Footer from "../components/footer";
+import Layout from "../components/layout";
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./index.css"
 
 const IndexPage = () => (
-
-  <div style={{
-    "overflow-x": "hidden",
-    "overflow-y": "hidden",
-  }}>
+  <Layout>
     <Navigation />
     <Cover />
     <About />
@@ -23,7 +19,7 @@ const IndexPage = () => (
     <Experience />
     <Contact />
     <Footer />
-  </div>
+  </Layout>
 )
 
 export default IndexPage

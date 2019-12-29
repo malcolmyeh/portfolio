@@ -1,29 +1,72 @@
 [
     {
         "title": "Test Project 1",
-        "description": ["Testing Project Query 1", "Testing Project Query 1", "Testing Project Query 1"],
-        "languages": ["All", "JavaScript", "Python"],
-        "type": ["All", "Front End"],
-        "libraries": ["All", "ReactJS", "GatsbyJS"],
+        "description": [
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+        ],
+        "languages": [
+            "All",
+            "JavaScript",
+            "Python"
+        ],
+        "type": [
+            "All",
+            "Front End"
+        ],
+        "libraries": [
+            "All",
+            "ReactJS",
+            "GatsbyJS"
+        ],
         "image": "Project001.jpg",
-        "link": "www.github.com/malcolmyeh"
+        "link": "https://www.github.com/malcolmyeh"
     },
     {
         "title": "Test Project 2",
-        "description": ["Testing Project Query 2", "Testing Project Query 2", "Testing Project Query 2"],
-        "languages": ["All", "C++", "Python"],
-        "type": ["All", "Full Stack"],
-        "libraries": ["All", "GraphQL", "SQLAlchemy", "Flask", "React"],
+        "description": [
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+        ],
+        "languages": [
+            "All",
+            "C++",
+            "Python"
+        ],
+        "type": [
+            "All",
+            "Full Stack"
+        ],
+        "libraries": [
+            "All",
+            "GraphQL",
+            "SQLAlchemy",
+            "Flask",
+            "React"
+        ],
         "image": "Project002.jpg",
-        "link": "www.github.com/malcolmyeh"
+        "link": "https://www.github.com/malcolmyeh"
     },
     {
         "title": "Test Project 3",
-        "description": ["Testing Project Query 3", "Testing Project Query 3", "Testing Project Query 3"],
-        "languages": ["All", "JavaScript", "TypeScript"],
-        "type": ["All", "Back End"],
-        "libraries": ["All", "Flask"],
+        "description": [
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+        ],
+        "languages": [
+            "All",
+            "JavaScript",
+            "TypeScript"
+        ],
+        "type": [
+            "All",
+            "Back End"
+        ],
+        "libraries": [
+            "All",
+            "Flask"
+        ],
         "image": "Project003.jpg",
-        "link": "www.github.com/malcolmyeh"
+        "link": "https://www.github.com/malcolmyeh"
     }
 ]
