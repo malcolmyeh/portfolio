@@ -5,7 +5,8 @@
         "languages": ["All", "JavaScript", "Python"],
         "type": ["All", "Front End"],
         "libraries": ["All", "ReactJS", "GatsbyJS"],
-        "image": "Project001.jpg"
+        "image": "Project001.jpg",
+        "link": "www.github.com/malcolmyeh"
     },
     {
         "title": "Test Project 2",
@@ -13,7 +14,8 @@
         "languages": ["All", "C++", "Python"],
         "type": ["All", "Full Stack"],
         "libraries": ["All", "GraphQL", "SQLAlchemy", "Flask", "React"],
-        "image": "Project002.jpg"
+        "image": "Project002.jpg",
+        "link": "www.github.com/malcolmyeh"
     },
     {
         "title": "Test Project 3",
@@ -21,6 +23,7 @@
         "languages": ["All", "JavaScript", "TypeScript"],
         "type": ["All", "Back End"],
         "libraries": ["All", "Flask"],
-        "image": "Project003.jpg"
+        "image": "Project003.jpg",
+        "link": "www.github.com/malcolmyeh"
     }
 ]

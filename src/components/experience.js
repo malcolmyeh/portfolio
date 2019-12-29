@@ -3,6 +3,47 @@ import experienceList from "../data/experience";
 import { StaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import { Row, Col } from "reactstrap";
+import styled from "styled-components";
+
+
+const HoverCol = styled(Col)`
+    padding: 0;
+    overflow: hidden;
+
+`;
+
+const HoverImage = styled(Img)`
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    ${HoverCol}:hover & {
+        transform: scale(1.1);
+        opacity: 0.4;
+    }
+
+`;
+
+const HoverText = styled.div`
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    ${HoverCol}:hover & {
+        opacity: 1;
+    }
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+`;
+
+
 const Experience = () => {
     return (
         <StaticQuery
@@ -38,32 +79,11 @@ const Experience = () => {
                                 ({ node }) => node.relativePath === image
                             ).node;
                             return (
-                                <Col key={company} style={{ padding: "0"}}>
-                                    <Img fluid={img.childImageSharp.fluid} />
-                                    <div style={{
-                                        background: "grey",
-                                        position: "absolute",
-                                        margin: "0",
-                                        padding: "0",
-                                        boxSizing: "border-box",
-                                        borderBottomStyle: "solid",
-                                        borderBottomWidth: "thin",
-                                        top: "0",
-                                        left: "0",
-                                        opacity: "0.3",
-                                        width: "100%",
-                                        height: "100%",
-                                    }}></div>
-                                    <div style={{
-                                        color: "black",
-                                        margin: "0",
-                                        "text-align": "center",
-                                        position: "absolute",
-                                        top: "50%",
-                                        left: "50%",
-                                        "marginRight": "-50%",
-                                        transform: "translate(-50%, -50%)"
-                                    }}>
+                                // overflow: "hidden"}}>
+                                <HoverCol>
+                                    {/* <Img fluid={img.childImageSharp.fluid} /> */}
+                                    <HoverImage fluid={img.childImageSharp.fluid} />
+                                    <HoverText>
                                         <h1>{company}</h1>
                                         <h3>{position}</h3>
                                         <p>{startDate}</p>
@@ -71,8 +91,9 @@ const Experience = () => {
                                         {description.map(entry => (
                                             <p>{entry}</p>
                                         ))}
-                                    </div>
-                                </Col>
+                                    </HoverText>
+                                </HoverCol>
+
                             );
                         })}
                     </Row>

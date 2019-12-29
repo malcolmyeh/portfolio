@@ -13,6 +13,44 @@ const options = {
     Library: [...new Set([].concat.apply([], projectList.map(project => project.libraries)))]
 };
 
+const HoverCol = styled(Col)`
+    padding: 0;
+    overflow: hidden;
+`;
+
+const HoverImage = styled(Img)`
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    ${HoverCol}:hover & {
+        transform: scale(1.1);
+        opacity: 0.4;
+    }
+
+`;
+
+const HoverText = styled.div`
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    ${HoverCol}:hover & {
+        opacity: 1;
+    }
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+`;
+
+
+
 // TODO: 
 // - find better way to implement handleChange (switch statement seems redundant)
 //      - https://zacjones.io/handle-multiple-inputs-in-react-with-hooks
@@ -67,7 +105,7 @@ const Projects = () => {
                         <h1>PROJECTS</h1>
                         <Collapsible
                             trigger="Filter by"
-                            >
+                        >
                             <Form onChange={handleChange}>
                                 <Row>
                                     {Object.entries(options).map((entry) => (
@@ -94,27 +132,20 @@ const Projects = () => {
                                     ({ node }) => node.relativePath === image
                                 ).node;
                                 return (
-                                    <Col xs="12" sm="12" md="12" lg="6" key={title} style={{
-                                        padding: "0"
+                                    <HoverCol xs="12" sm="12" md="12" lg="6" key={title} style={{
+                                        padding: "0",
+                                        overflow: "hidden",
                                     }}>
-                                        <Img fluid={img.childImageSharp.fluid} />
-                                        <div style={{
-                                            color: "black",
-                                            margin: "0",
-                                            "text-align": "center",
-                                            position: "absolute",
-                                            top: "50%",
-                                            left: "50%",
-                                            "marginRight": "-50%",
-                                            transform: "translate(-50%, -50%)"
-                                        }}>
+
+                                        <HoverImage fluid={img.childImageSharp.fluid} />
+                                        <HoverText>
                                             <h1>{title}</h1>
                                             {description.map(entry => (
                                                 <h3>{entry}</h3>
                                             ))}
-                                        </div>
+                                        </HoverText>
 
-                                    </Col>
+                                    </HoverCol>
                                 );
                             })}
                     </Row>

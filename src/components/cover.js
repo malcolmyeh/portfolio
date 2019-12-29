@@ -35,8 +35,8 @@ const Cover = () => (
                     }
                     fluid={data.cover.childImageSharp.fluid} />
                 <div className="center">
-                    <h1 className="name">
-                        <b>MALCOLM YEH</b>
+                    <h1>
+                        MALCOLM YEH
                     </h1>
                     <p className="greetings">Scroll down to get to know me!</p>
                 </div>
