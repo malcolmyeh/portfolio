@@ -32,7 +32,7 @@ const FooterContainer = styled.div`
 
 const Footer = () => (
     <FooterContainer>
-        <div style={{width: "20%", margin: "0 auto"}}>
+
         <p>Copyright Malcolm Yeh 2019</p>
         <Row>
             {SocialList.map(social => (
@@ -44,7 +44,6 @@ const Footer = () => (
 
             ))}
         </Row>
-        </div>
     </FooterContainer>
 );
 

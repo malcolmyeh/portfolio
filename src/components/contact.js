@@ -39,13 +39,13 @@ const ContactForm = () => {
     return (
         <Form onChange={handleChange}>
             <Row>
-                <Col>
+                <Col xs="12" sm="12" md="12" lg="6" >
                     <FormGroup>
                         <Label for="name">Name</Label>
                         <Input type="text" name="name" value={name}placeholder="Your Name" />
                     </FormGroup>
                 </Col>
-                <Col>
+                <Col xs="12" sm="12" md="12" lg="6" >
                     <FormGroup>
                         <Label for="email">Email</Label>
                         <Input type="email" name="email" value={email} placeholder="name@example.com" />
