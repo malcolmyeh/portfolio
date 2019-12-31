@@ -94,7 +94,7 @@ const About = () => (
                     </Col>
                     <Col xs="12" sm="12" md="12" lg="6">
                         <AboutContainer>
-                            <h1>ABOUT ME</h1>
+                            {/* <h1>ABOUT ME</h1> */}
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisi scelerisque eu ultrices vitae auctor eu augue ut lectus. Proin sed libero enim sed faucibus turpis in. Tortor vitae purus faucibus ornare suspendisse sed nisi. Ipsum nunc aliquet bibendum enim facilisis gravida neque convallis. </p>
                             <div>

@@ -1,18 +1,22 @@
 import React from "react";
 import experienceList from "../data/experience";
 import { StaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
-import { Row, Col } from "reactstrap";
+import { Row } from "reactstrap";
 import styled from "styled-components";
 import BackgroundImage from 'gatsby-background-image'
 
 
 const HoverText = styled.div`
-    padding-top: 8vh;
-    padding-left: 5vw;
-    padding-right: 5vw;
-    padding-bottom: 7vh;
+    padding: 5%;
 `;
+
+const HoverRow = styled.div`
+    height: 100%;
+    display: flex;
+    align-items: center;
+`;
+
+
 
 
 const Experience = () => {
@@ -36,13 +40,15 @@ const Experience = () => {
             `}
             render={data => (
                 <div>
-                    <div id="experience" style={{
+                    {/* <div id="experience" style={{
                         "paddingTop": "8vh",
                         "paddingLeft": "5vw",
                         "paddingRight": "5vw",
-                        "paddingBottom": "7vh",
-                    }}>
-                        <h1>EXPERIENCE</h1>
+                        "paddingBottom": "8vh",
+                        "text-align": "right"
+                    }}> */}
+                    <div id="experience">
+                        {/* <h1>EXPERIENCE</h1> */}
                     </div>
 
                     {experienceList.map(({ company, position, description, startDate, endDate, image, location, link }) => {
@@ -52,13 +58,15 @@ const Experience = () => {
                         return (
                             <Row style={{ "min-height": "50vh" }}>
                                 <BackgroundImage backgroundColor={`#040e18`} fluid={img.childImageSharp.fluid}>
-                                    <HoverText>
-                                        <h1>{company}</h1>
-                                        <h4>{position}</h4>
-                                        <p>{startDate} - {endDate}</p>
-                                        <p>{location}</p>
-                                        <p>{description}</p>
-                                    </HoverText>
+                                    <HoverRow>
+                                        <HoverText>
+                                            <h1>{company}</h1>
+                                            <h4>{position}</h4>
+                                            <p>{startDate} - {endDate}</p>
+                                            <p>{location}</p>
+                                            <p>{description}</p>
+                                        </HoverText>
+                                    </HoverRow>
                                 </BackgroundImage>
 
                             </Row>

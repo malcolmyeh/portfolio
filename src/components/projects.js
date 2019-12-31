@@ -101,7 +101,7 @@ const Projects = () => {
                         "paddingTop": "8vh",
                         "paddingLeft": "5vw",
                         "paddingRight": "5vw",
-                        "paddingBottom": "7vh"
+                        "paddingBottom": "8vh"
                     }}>
                         <h1>PROJECTS</h1>
                         <Collapsible

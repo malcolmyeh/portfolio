@@ -26,12 +26,12 @@
 
   
   .nav-link:hover {
-    text-decoration: underline !important;
+    /* text-decoration: underline !important; */
     
   }
   
   .active {
-    text-decoration: underline !important;
+    /* text-decoration: underline !important; */
   }
   
   .nav-link {
