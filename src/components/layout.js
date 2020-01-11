@@ -7,6 +7,7 @@ const Container = styled.div`
 `;
 
 const Layout = ({children}) => (
+    
     <Container>
         {children}
     </Container>
