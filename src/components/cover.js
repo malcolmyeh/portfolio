@@ -11,6 +11,19 @@ const Background = styled(BackgroundImage)`
     align-items: center;
 `;
 
+const Overlay = styled.div`
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+`;
+
 const SocialList = [
     {
         link: "https://www.github.com/malcolmyeh",
@@ -44,13 +57,13 @@ const Cover = () => (
         `}
         render={data => (
             <Background fluid={data.cover.childImageSharp.fluid}>
-
+                <Overlay/>
                 <div className="center">
                     <h1>MALCOLM YEH</h1>
                     <Row>
                         {SocialList.map(social => (
                             <Col>
-                                <a style={{color : "black"}} href={social.link}>
+                                <a style={{ color: "black" }} href={social.link}>
                                     <FontAwesomeIcon icon={social.icon} />
                                 </a>
                             </Col>
