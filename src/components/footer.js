@@ -5,7 +5,7 @@ import { Row, Col } from "reactstrap";
 const SocialList = [
     {
         link: "https://www.github.com/malcolmyeh",
-        text: "Github"
+        text: "GitHub"
     },
     {
         link: "https://www.linkedin.com/in/malcolmyeh/",
