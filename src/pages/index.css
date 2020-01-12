@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap');
 body {
-    font-family: 'Cinzel', serif;
+    font-family: 'Nanum Myeongjo', serif;
 }
 .section {
     padding-top: 70px;

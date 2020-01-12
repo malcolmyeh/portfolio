@@ -7,7 +7,8 @@ import BackgroundImage from 'gatsby-background-image'
 
 
 const HoverText = styled.div`
-    padding: 5%;
+    padding-left: 10vw;
+    padding-right: 10vw;
 `;
 
 const HoverRow = styled.div`
@@ -39,25 +40,14 @@ const Experience = () => {
                 }
             `}
             render={data => (
-                <div>
-                    {/* <div id="experience" style={{
-                        "paddingTop": "8vh",
-                        "paddingLeft": "5vw",
-                        "paddingRight": "5vw",
-                        "paddingBottom": "8vh",
-                        "text-align": "right"
-                    }}> */}
-                    <div id="experience">
-                        {/* <h1>EXPERIENCE</h1> */}
-                    </div>
-
+                <div id="experience">
                     {experienceList.map(({ company, position, description, startDate, endDate, image, location, link }) => {
                         const img = data.allFile.edges.find(
                             ({ node }) => node.relativePath === image
                         ).node;
                         return (
                             <Row style={{ "min-height": "50vh" }}>
-                                <BackgroundImage backgroundColor={`#040e18`} fluid={img.childImageSharp.fluid}>
+                                <BackgroundImage fluid={img.childImageSharp.fluid}>
                                     <HoverRow>
                                         <HoverText>
                                             <h1>{company}</h1>

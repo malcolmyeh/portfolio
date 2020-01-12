@@ -56,7 +56,7 @@ const ContactForm = () => {
                 <Col>
                     <FormGroup>
                         <Label for="message">Message</Label>
-                        <Input type="textarea" name="message" value={message}/>
+                        <Input type="textarea" rows="5" name="message" value={message}/>
                     </FormGroup>
                 </Col>
             </Row>
@@ -73,7 +73,11 @@ const Contact = () => {
             "paddingRight": "5vw",
             "paddingBottom": "8vh"
         }}>
+            <div style={{
+                "paddingBottom": "4vh"
+            }}>
             <h1>CONTACT</h1>
+            </div>
             {ContactForm()}
         </div >
     );

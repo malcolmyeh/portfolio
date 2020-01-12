@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Fade from 'react-reveal/Fade';
 import Scrollspy from "react-scrollspy";
 import {
     Collapse,
@@ -9,8 +10,7 @@ import {
 } from "reactstrap";
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import "./navigation.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+
 
 const navigationItems = ['ABOUT', 'PROJECTS', 'EXPERIENCE', 'CONTACT'];
 
@@ -47,20 +47,27 @@ const Navigation = () => {
     return (
         <Navbar className={whiteBackground} fixed={"top"} expand="md">
             <NavbarBrand>
-                MALCOLM YEH
+                <Fade>
+                    MALCOLM YEH
+                </Fade>
             </NavbarBrand>
-            <NavbarToggler onClick={() => setMobileOpen(!mobileOpen)}>
-                <FontAwesomeIcon icon={faBars}/>
-            </NavbarToggler>
+            <Fade>
+                <NavbarToggler onClick={() => setMobileOpen(!mobileOpen)}>
+                    {/* <FontAwesomeIcon icon={faBars} /> */}
+                    ≡
+                </NavbarToggler>
+            </Fade>
             <Collapse isOpen={mobileOpen} navbar>
                 <Scrollspy
                     items={navigationItems.map(item => item.toLowerCase())}
                     currentClassName="active"
                     className="ml-auto navbar-nav"
-                    
+
                     navbar>
                     {navigationItems.map(item => (
-                        <NavItem key={item}>{getNavAnchorLink(item)}</NavItem>
+                        <Fade>
+                            <NavItem key={item}>{getNavAnchorLink(item)}</NavItem>
+                        </Fade>
                     ))}
                 </Scrollspy>
             </Collapse>

@@ -1,24 +1,21 @@
 import React from "react";
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin, faInstagram } from "@fortawesome/free-brands-svg-icons"
 import { Row, Col } from "reactstrap";
 
 const SocialList = [
     {
         link: "https://www.github.com/malcolmyeh",
-        icon: faGithub
+        text: "Github"
     },
     {
-        link: "https://www.linkedin.com",
-        icon: faLinkedin
+        link: "https://www.linkedin.com/in/malcolmyeh/",
+        text: "LinkedIn"
     },
     {
-        link: "https://instagram.com",
-        icon: faInstagram
+        link: "https://instagram.com/malcolmyeh",
+        text: "Instagram"
     }
 ];
-
 const FooterContainer = styled.div`
     width: 100%;
     height: 120px;
@@ -37,11 +34,10 @@ const Footer = () => (
         <Row>
             {SocialList.map(social => (
                 <Col>
-                    <a style={{ color: "white" }} href={social.link}>
-                        <FontAwesomeIcon icon={social.icon} />
+                    <a style={{ color: "white", "text-decoration": "none" }} href={social.link}>
+                        {social.text}
                     </a>
                 </Col>
-
             ))}
         </Row>
     </FooterContainer>

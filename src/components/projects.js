@@ -26,13 +26,13 @@ const HoverImage = styled(Img)`
     -ms-transition: all 1s ease;
     ${HoverCol}:hover & {
         transform: scale(1.1);
-        opacity: 0.4;
+        opacity: 0.35;
     }
 
 `;
 
 const HoverText = styled.div`
-    text-align: center;
+    text-align: left;
     position: absolute;
     top: 75%;
     left: 50%;
