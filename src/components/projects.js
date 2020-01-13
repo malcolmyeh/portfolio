@@ -147,7 +147,7 @@ const Projects = () => {
                                             {description.map(entry => (
                                                 <p>{entry}</p>
                                             ))}
-                                            <a href={link}>Source Code</a>
+                                            <a style={{"color": "black", "text-decoration":"none"}}href={link}>Source Code</a>
                                         </HoverText>
 
                                     </HoverCol>
