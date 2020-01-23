@@ -1,6 +1,49 @@
 [
     {
-        "title": "Test Project 1 (WILL BE UPDATED SOON)",
+        "title": "CC3K+",
+        "description": [
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+        ],
+        "languages": [
+            "All",
+            "C++"
+        ],
+        "type": [
+            "All"
+        ],
+        "libraries": [
+            "All"
+        ],
+        "image": "Project001.jpg",
+        "link": "https://github.com/malcolmyeh/CC3K"
+    },
+    {
+        "title": "Stoxs",
+        "description": [
+            "Web scraper written in Python using Beautiful Soup and Pandas that scrapes closing-market table data from Wall Street Journal and automatically stores and queries sorted data from over 4000 companies in locally hosted MySQL server.",
+            "Text-based user interface that allows users to view specific sets of data, export tables to .csv files, and visualize stock data through different graphs created with Matplotlib."
+        ],
+        "languages": [
+            "All",
+            "Python"
+        ],
+        "type": [
+            "All",
+            "Back End"
+        ],
+        "libraries": [
+            "All",
+            "Pandas",
+            "MySQL",
+            "BeautifulSoup",
+            "Matplotlib"
+        ],
+        "image": "Project002.jpg",
+        "link": "https://github.com/stoxs/Stoxs"
+    },
+    {
+        "title": "malcolmyeh.me",
         "description": [
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
             "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
@@ -8,7 +51,33 @@
         "languages": [
             "All",
             "JavaScript",
-            "Python"
+            "CSS"
+        ],
+        "type": [
+            "All",
+            "Front End"
+        ],
+        "libraries": [
+            "All",
+            "GraphQL",
+            "GatsbyJS",
+            "ReactJS",
+            "ReactStrap",
+            "StyledComponents"
+        ],
+        "image": "Project003.jpg",
+        "link": "https://github.com/malcolmyeh/portfolio"
+    },
+    {
+        "title": "Chat",
+        "description": [
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+        ],
+        "languages": [
+            "All",
+            "JavaScript",
+            "CSS"
         ],
         "type": [
             "All",
@@ -17,56 +86,9 @@
         "libraries": [
             "All",
             "ReactJS",
-            "GatsbyJS"
+            "Firebase"
         ],
-        "image": "Project001.jpg",
-        "link": "https://www.github.com/malcolmyeh"
-    },
-    {
-        "title": "Test Project 2 (WILL BE UPDATED SOON)",
-        "description": [
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
-        ],
-        "languages": [
-            "All",
-            "C++",
-            "Python"
-        ],
-        "type": [
-            "All",
-            "Full Stack"
-        ],
-        "libraries": [
-            "All",
-            "GraphQL",
-            "SQLAlchemy",
-            "Flask",
-            "React"
-        ],
-        "image": "Project002.jpg",
-        "link": "https://www.github.com/malcolmyeh"
-    },
-    {
-        "title": "Test Project 3 (WILL BE UPDATED SOON)",
-        "description": [
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
-        ],
-        "languages": [
-            "All",
-            "JavaScript",
-            "TypeScript"
-        ],
-        "type": [
-            "All",
-            "Back End"
-        ],
-        "libraries": [
-            "All",
-            "Flask"
-        ],
-        "image": "Project003.jpg",
-        "link": "https://www.github.com/malcolmyeh"
+        "image": "Project004.jpg",
+        "link": "https://github.com/malcolmyeh/Chat"
     }
 ]

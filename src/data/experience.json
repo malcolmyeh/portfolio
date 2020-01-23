@@ -2,7 +2,7 @@
     {
         "company": "Evertz Microsystems",
         "position": "Software Engineer",
-        "description": "Created automation test suites for the CI/CD pipeline of the flagship product line. Wrote guide to setup Automation development environment and assisted new automation hires with onboarding.Designed and developed user interface and set up backend Flask application for full-stack application that deploys and configures product line on cloud computing services",
+        "description": "Designed and developed a ReactJS user interface and set up a Flask backend for full-stack application that rapidly deploys and configures the company software suite on cloud computing services. Refactored the code structure to employ MVC design pattern and utilized object relational mapping and GraphQL to store and manipulate data in relational SQLite database. Developed automation test suites for the current CI/CD pipeline of the flagship media-asset-management platform using TypeScript, Selenium, Protractor, Chrome DevTools, and object-oriented design principles. Authored guide to set up the Automation development environment using Vagrant and Docker images and assisted in onboarding newly hired automation engineers. Wrote manual QA test suites for release testing of the media asset management platform using TestRail",
         "startDate": "September 2019",
         "endDate": "December 2019",
         "image": "grey.png",

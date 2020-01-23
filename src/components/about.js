@@ -57,9 +57,9 @@ const SkillSet = ({ title, children }) => (
             trigger={title}
             transitionTime={300}
             easing="ease-out"
-        ><span>• </span>
+        >
             {children.map(skill => (
-                <span>{skill} • </span>
+                <span>{skill} </span>
             ))}
         </Collapsible>
     </Wrapper2>

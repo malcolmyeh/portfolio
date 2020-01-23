@@ -140,10 +140,10 @@ const Projects = () => {
                                         <HoverImage fluid={img.childImageSharp.fluid} />
                                         <HoverText>
                                             <h1>{title}</h1>
-                                            <span>• </span>
                                             {libraries.filter(entry => entry !== "All").map(entry => (
-                                                <span>{entry} • </span>
+                                                <span><b>{entry}</b> </span>
                                             ))}
+                                            <p></p>
                                             {description.map(entry => (
                                                 <p>{entry}</p>
                                             ))}
